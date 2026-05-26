@@ -6,3 +6,5 @@ pytesseract==0.3.13
 Pillow==11.2.1
 pydantic==2.11.4
 requests==2.32.3
+
+openai==1.84.0
