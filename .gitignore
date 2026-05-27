@@ -54,3 +54,5 @@ testing.sh
 
 # Documents
 *.pdf
+
+.pat

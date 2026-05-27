@@ -1,10 +1,13 @@
 from __future__ import annotations
 
 import base64
+import logging
 from pathlib import Path
 from typing import Any
 
 import fitz
+
+logger = logging.getLogger(__name__)
 
 
 def pdf_page_texts(pdf_path: Path) -> list[str]:
@@ -69,6 +72,7 @@ def extract_pdf_pages(
 
 
 def extract_pdf_page_digital(page: fitz.Page) -> dict[str, Any]:
+    logger.debug("page %s: digital", page.number)
     return {
         "index": page.number,
         "markdown": page.get_text("text").strip(),
